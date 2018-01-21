@@ -4,6 +4,7 @@ import { Task } from '../model/task';
 @Injectable()
 export class DataService {
   tasks: Task[];
+
   constructor() {
     this.tasks = [];
   }
@@ -34,7 +35,7 @@ export class DataService {
 
   removeTask(task: Task) {
     for (let i = 0; this.tasks.length; i++) {
-      if (task === this.tasks[i]) {
+      if (task === this.tasks[i] ) {
           this.tasks.splice(i, 1);
           localStorage.setItem('tasks', JSON.stringify(this.tasks));
       }
